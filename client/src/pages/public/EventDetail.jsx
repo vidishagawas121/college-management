@@ -5,6 +5,7 @@ import SEO from '../../components/common/SEO';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
 import EmptyState from '../../components/common/EmptyState';
 import RichTextRenderer from '../../components/common/RichTextRenderer';
+import ImageWithFallback from '../../components/common/ImageWithFallback';
 import { Calendar, Clock, MapPin, Users, ExternalLink, ChevronLeft, ArrowRight, Share2 } from 'lucide-react';
 
 const EventDetail = () => {
@@ -56,9 +57,10 @@ const EventDetail = () => {
           <div className="lg:col-span-8 space-y-8">
             <div className="bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm">
               <div className="h-72 sm:h-96 bg-slate-100 overflow-hidden relative">
-                <img
-                  src={event.coverImage || 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=1200'}
+                <ImageWithFallback
+                  src={event.coverImage}
                   alt={event.title}
+                  type="event"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute top-4 left-4 bg-academic-navy text-amber-400 text-xs font-bold px-3 py-1.5 rounded-xl shadow">

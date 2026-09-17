@@ -2,6 +2,7 @@ import React from 'react';
 import { useCollege } from '../../context/CollegeContext';
 import SEO from '../../components/common/SEO';
 import RichTextRenderer from '../../components/common/RichTextRenderer';
+import ImageWithFallback from '../../components/common/ImageWithFallback';
 import { Quote, Mail, GraduationCap } from 'lucide-react';
 
 const PrincipalMessage = () => {
@@ -33,9 +34,10 @@ const PrincipalMessage = () => {
           {/* Profile Card */}
           <div className="lg:col-span-4 bg-white rounded-3xl p-6 border border-slate-200 shadow-sm text-center">
             <div className="w-48 h-48 mx-auto rounded-2xl overflow-hidden border-4 border-amber-500/30 mb-4 shadow-md bg-slate-100">
-              <img
-                src={collegeInfo?.principalPhoto || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600'}
+              <ImageWithFallback
+                src={collegeInfo?.principalPhoto}
                 alt="Principal"
+                type="avatar"
                 className="w-full h-full object-cover"
               />
             </div>

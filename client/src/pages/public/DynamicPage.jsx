@@ -5,6 +5,7 @@ import SEO from '../../components/common/SEO';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
 import EmptyState from '../../components/common/EmptyState';
 import RichTextRenderer from '../../components/common/RichTextRenderer';
+import ImageWithFallback from '../../components/common/ImageWithFallback';
 import { ChevronLeft } from 'lucide-react';
 
 const DynamicPage = () => {
@@ -49,9 +50,10 @@ const DynamicPage = () => {
 
         {page.featuredImage && (
           <div className="rounded-3xl overflow-hidden mb-8 shadow-md border border-slate-200 aspect-[16/9] bg-slate-100">
-            <img
+            <ImageWithFallback
               src={page.featuredImage}
               alt={page.title}
+              type="general"
               className="w-full h-full object-cover"
             />
           </div>

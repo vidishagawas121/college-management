@@ -3,6 +3,7 @@ import { achievementService } from '../../services/achievementService';
 import SEO from '../../components/common/SEO';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
 import EmptyState from '../../components/common/EmptyState';
+import ImageWithFallback from '../../components/common/ImageWithFallback';
 import { Trophy, Award, Calendar, Users, ExternalLink, ShieldCheck } from 'lucide-react';
 
 const Achievements = () => {
@@ -103,9 +104,10 @@ const Achievements = () => {
                 <div>
                   {ach.photo ? (
                     <div className="h-52 bg-slate-100 overflow-hidden relative">
-                      <img
+                      <ImageWithFallback
                         src={ach.photo}
                         alt={ach.title}
+                        type="article"
                         className="w-full h-full object-cover"
                       />
                       <div className="absolute top-4 left-4 bg-academic-navy text-amber-400 text-xs font-bold px-3 py-1 rounded-xl shadow">

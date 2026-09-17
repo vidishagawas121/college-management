@@ -5,6 +5,7 @@ import { departmentService } from '../../services/departmentService';
 import SEO from '../../components/common/SEO';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
 import EmptyState from '../../components/common/EmptyState';
+import ImageWithFallback from '../../components/common/ImageWithFallback';
 import SearchBar from '../../components/common/SearchBar';
 import { Mail, Phone, BookOpen, GraduationCap, ChevronRight, User } from 'lucide-react';
 
@@ -124,9 +125,10 @@ const Staff = () => {
                 <div>
                   <div className="flex items-start gap-4 mb-4">
                     <div className="w-20 h-20 rounded-2xl overflow-hidden bg-slate-100 flex-shrink-0 border border-slate-200">
-                      <img
-                        src={st.photo || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400'}
+                      <ImageWithFallback
+                        src={st.photo}
                         alt={st.name}
+                        type="avatar"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform"
                       />
                     </div>

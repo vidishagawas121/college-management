@@ -4,6 +4,7 @@ import { eventService } from '../../services/eventService';
 import SEO from '../../components/common/SEO';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
 import EmptyState from '../../components/common/EmptyState';
+import ImageWithFallback from '../../components/common/ImageWithFallback';
 import { Calendar, Clock, MapPin, Tag, ArrowRight, ChevronRight } from 'lucide-react';
 
 const Events = () => {
@@ -111,9 +112,10 @@ const Events = () => {
                 >
                   <div>
                     <div className="h-52 bg-slate-100 overflow-hidden relative">
-                      <img
-                        src={evt.coverImage || 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=800'}
+                      <ImageWithFallback
+                        src={evt.coverImage}
                         alt={evt.title}
+                        type="event"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute top-4 left-4 bg-academic-navy/90 backdrop-blur-xs text-amber-400 text-xs font-bold px-3 py-1 rounded-xl shadow">

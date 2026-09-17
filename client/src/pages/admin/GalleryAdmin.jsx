@@ -8,6 +8,7 @@ import SearchBar from '../../components/common/SearchBar';
 import StatusBadge from '../../components/common/StatusBadge';
 import ConfirmDialog from '../../components/admin/ConfirmDialog';
 import FileUploader from '../../components/admin/FileUploader';
+import ImageWithFallback from '../../components/common/ImageWithFallback';
 import { Plus, Edit, Trash2, Image as ImageIcon, PlusCircle } from 'lucide-react';
 
 const GalleryAdmin = () => {
@@ -168,9 +169,10 @@ const GalleryAdmin = () => {
       cell: (row) => (
         <div className="flex items-center gap-3">
           <div className="w-12 h-12 rounded-xl overflow-hidden bg-slate-100 flex-shrink-0 border border-slate-200">
-            <img
-              src={row.coverImage || 'https://images.unsplash.com/photo-1562774053-701939374585?w=200'}
+            <ImageWithFallback
+              src={row.coverImage}
               alt={row.title}
+              type="gallery"
               className="w-full h-full object-cover"
             />
           </div>
@@ -377,7 +379,7 @@ const GalleryAdmin = () => {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {formData.images?.map((img, i) => (
                 <div key={i} className="relative rounded-xl overflow-hidden border border-slate-200 bg-white group">
-                  <img src={img.url} alt={img.caption || `Photo ${i}`} className="w-full h-24 object-cover" />
+                  <ImageWithFallback src={img.url} alt={img.caption || `Photo ${i}`} type="gallery" className="w-full h-24 object-cover" />
                   <div className="p-2">
                     <p className="text-[10px] text-slate-600 truncate">{img.caption || 'No caption'}</p>
                   </div>

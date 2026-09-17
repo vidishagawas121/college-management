@@ -28,6 +28,7 @@ import { galleryService } from '../../services/galleryService';
 import SEO from '../../components/common/SEO';
 import RichTextRenderer from '../../components/common/RichTextRenderer';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
+import ImageWithFallback from '../../components/common/ImageWithFallback';
 
 const Home = () => {
   const { collegeInfo, settings } = useCollege();
@@ -202,9 +203,10 @@ const Home = () => {
           <div className="lg:col-span-5 bg-gradient-to-br from-slate-900 to-academic-navy text-white rounded-2xl p-6 sm:p-8 shadow-xl border border-slate-800 relative overflow-hidden">
             <div className="flex items-center gap-4 mb-6">
               <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-amber-400 flex-shrink-0 bg-slate-800">
-                <img
-                  src={collegeInfo?.principalPhoto || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400'}
+                <ImageWithFallback
+                  src={collegeInfo?.principalPhoto}
                   alt="Principal"
+                  type="avatar"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -292,9 +294,10 @@ const Home = () => {
               className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-lg transition-all flex flex-col justify-between group"
             >
               <div className="h-44 bg-slate-100 overflow-hidden relative">
-                <img
-                  src={dept.image || 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800'}
+                <ImageWithFallback
+                  src={dept.image}
                   alt={dept.name}
+                  type="department"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <span className="absolute top-3 left-3 bg-academic-navy/90 backdrop-blur-xs text-amber-400 text-xs font-bold px-2.5 py-1 rounded-lg">
@@ -419,9 +422,10 @@ const Home = () => {
                       className="bg-white rounded-xl p-4 border border-slate-200 hover:border-amber-400 hover:shadow-md transition-all flex gap-4 items-center group"
                     >
                       <div className="w-20 h-20 rounded-lg bg-slate-100 overflow-hidden flex-shrink-0">
-                        <img
-                          src={art.featuredImage || 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=400'}
+                        <ImageWithFallback
+                          src={art.featuredImage}
                           alt={art.title}
+                          type="article"
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform"
                         />
                       </div>
@@ -528,9 +532,10 @@ const Home = () => {
                 to={`/gallery/${gal.slug}`}
                 className="group relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-800 shadow-lg block"
               >
-                <img
-                  src={gal.coverImage || 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=800'}
+                <ImageWithFallback
+                  src={gal.coverImage}
                   alt={gal.title}
+                  type="gallery"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent flex flex-col justify-end p-5">
