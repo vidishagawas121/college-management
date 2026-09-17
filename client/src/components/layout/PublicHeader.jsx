@@ -55,21 +55,21 @@ const PublicHeader = () => {
   const menuItems = navigationMenu && navigationMenu.length > 0 ? navigationMenu : defaultMenu;
 
   return (
-    <header className="sticky top-0 z-40 bg-white shadow-md transition-all">
+    <header className="sticky top-0 z-40 bg-white shadow-md transition-all border-b border-[var(--color-border)]">
       {/* Top Institutional Bar */}
-      <div className="bg-slate-900 text-slate-300 text-xs py-1.5 px-4 sm:px-6 lg:px-8 border-b border-slate-800">
+      <div className="bg-[var(--color-primary)] text-white/85 text-xs py-2 px-4 sm:px-6 lg:px-8 border-b border-white/10">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-6">
-            <a href={`tel:${phone}`} className="hover:text-amber-400 flex items-center gap-1.5 transition-colors">
-              <Phone className="w-3.5 h-3.5 text-amber-500" />
+            <a href={`tel:${phone}`} className="hover:text-[var(--color-accent-light)] flex items-center gap-1.5 transition-colors">
+              <Phone className="w-3.5 h-3.5 text-[var(--color-accent-light)]" />
               <span className="hidden sm:inline">{phone}</span>
             </a>
-            <a href={`mailto:${email}`} className="hover:text-amber-400 flex items-center gap-1.5 transition-colors">
-              <Mail className="w-3.5 h-3.5 text-amber-500" />
+            <a href={`mailto:${email}`} className="hover:text-[var(--color-accent-light)] flex items-center gap-1.5 transition-colors">
+              <Mail className="w-3.5 h-3.5 text-[var(--color-accent-light)]" />
               <span className="hidden md:inline">{email}</span>
             </a>
-            <span className="hidden lg:inline-flex items-center gap-1 text-emerald-400 font-semibold bg-emerald-950/60 px-2 py-0.5 rounded text-[11px]">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping mr-0.5" />
+            <span className="hidden lg:inline-flex items-center gap-1 text-[var(--color-accent-light)] font-semibold bg-white/10 px-2 py-0.5 rounded text-[11px]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent-light)] animate-ping mr-0.5" />
               NAAC Grade A++ Accredited
             </span>
           </div>
@@ -77,17 +77,17 @@ const PublicHeader = () => {
           <div className="flex items-center gap-4">
             <Link
               to="/courses"
-              className="text-amber-400 hover:text-amber-300 font-semibold transition-colors flex items-center gap-1"
+              className="text-[var(--color-accent-light)] hover:text-white font-semibold transition-colors flex items-center gap-1"
             >
               Academic Programs 2026
             </Link>
-            <span className="text-slate-600">|</span>
+            <span className="text-white/40">|</span>
             <Link
               to="/admin/login"
-              className="text-slate-400 hover:text-white transition-colors flex items-center gap-1"
+              className="text-white/70 hover:text-white transition-colors flex items-center gap-1"
               title="Admin Portal"
             >
-              <ShieldAlert className="w-3.5 h-3.5 text-slate-400" />
+              <ShieldAlert className="w-3.5 h-3.5 text-white/70" />
               <span className="text-[11px]">Admin Access</span>
             </Link>
           </div>
@@ -97,11 +97,11 @@ const PublicHeader = () => {
       {/* Main Branding Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between gap-4">
         <Link to="/" className="flex items-center gap-3.5 group">
-          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-900 to-primary-800 text-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform flex-shrink-0 border border-primary-700">
-            <GraduationCap className="w-7 h-7 text-amber-400" />
+          <div className="w-12 h-12 rounded-xl bg-[var(--color-primary)] text-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform flex-shrink-0 border border-[var(--color-primary-light)]">
+            <GraduationCap className="w-7 h-7 text-[var(--color-accent-light)]" />
           </div>
           <div>
-            <span className="text-xl sm:text-2xl font-extrabold text-academic-navy tracking-tight font-heading block leading-tight">
+            <span className="text-xl sm:text-2xl font-extrabold text-[var(--color-primary)] tracking-tight font-heading block leading-tight">
               {collegeName}
             </span>
             <span className="text-xs text-slate-500 font-medium hidden sm:block">
@@ -113,7 +113,7 @@ const PublicHeader = () => {
         <div className="hidden lg:flex items-center gap-3">
           <Link
             to="/admissions"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-bold px-5 py-2.5 rounded-xl text-sm shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 bg-[var(--color-secondary)] hover:bg-[var(--color-primary)] text-white font-bold px-5 py-2.5 rounded-xl text-sm shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5"
           >
             <span>Apply for Admission</span>
             <ArrowRight className="w-4 h-4" />
@@ -131,7 +131,7 @@ const PublicHeader = () => {
       </div>
 
       {/* Primary Navigation Bar (Desktop) */}
-      <nav className="hidden lg:block bg-academic-navy text-white border-t border-primary-900 shadow-inner">
+      <nav className="hidden lg:block bg-[var(--color-primary)] text-white border-t border-[var(--color-primary-dark)] shadow-inner">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ul className="flex items-center space-x-1">
             {menuItems.map((item, index) => {
@@ -149,7 +149,7 @@ const PublicHeader = () => {
                     <button
                       className={`flex items-center gap-1.5 px-3.5 py-2.5 rounded-lg text-xs font-semibold tracking-wide uppercase transition-colors ${
                         isActive
-                          ? 'text-amber-400 bg-white/10'
+                          ? 'text-[var(--color-accent-light)] bg-white/10'
                           : 'text-slate-200 hover:text-white hover:bg-white/5'
                       }`}
                     >
@@ -161,7 +161,7 @@ const PublicHeader = () => {
                       to={item.url}
                       className={`block px-3.5 py-2.5 rounded-lg text-xs font-semibold tracking-wide uppercase transition-colors ${
                         isActive
-                          ? 'text-amber-400 bg-white/10'
+                          ? 'text-[var(--color-accent-light)] bg-white/10'
                           : 'text-slate-200 hover:text-white hover:bg-white/5'
                       }`}
                     >
@@ -248,7 +248,7 @@ const PublicHeader = () => {
             <div className="pt-4">
               <Link
                 to="/admissions"
-                className="w-full text-center block bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold py-3 rounded-xl text-sm shadow"
+                className="w-full text-center block bg-[var(--color-secondary)] hover:bg-[var(--color-primary)] text-white font-bold py-3 rounded-xl text-sm shadow"
               >
                 Apply for Admission 2026
               </Link>

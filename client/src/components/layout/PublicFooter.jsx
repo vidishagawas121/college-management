@@ -18,51 +18,51 @@ const PublicFooter = () => {
   const social = settings?.socialLinks || {};
 
   return (
-    <footer className="bg-academic-navy text-slate-300 border-t-4 border-amber-500 pt-16 pb-8">
+    <footer className="bg-[var(--color-primary)] text-white/75 border-t-4 border-[var(--color-accent)] pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
           {/* Column 1: College Info */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center font-bold shadow">
+              <div className="w-10 h-10 rounded-lg bg-[var(--color-accent)] text-[var(--color-primary)] flex items-center justify-center font-bold shadow">
                 <GraduationCap className="w-6 h-6" />
               </div>
               <span className="text-lg font-bold text-white font-heading">
                 {shortName}
               </span>
             </div>
-            <p className="text-xs leading-relaxed text-slate-400">
+            <p className="text-xs leading-relaxed text-white/70">
               {footerAbout}
             </p>
             <div className="pt-2">
-              <span className="inline-flex items-center gap-1.5 text-xs text-amber-400 bg-amber-950/40 border border-amber-800/40 px-3 py-1.5 rounded-lg">
-                <ShieldCheck className="w-4 h-4 text-amber-400" />
+              <span className="inline-flex items-center gap-1.5 text-xs text-[var(--color-accent-light)] bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg">
+                <ShieldCheck className="w-4 h-4 text-[var(--color-accent-light)]" />
                 NAAC A++ & NBA Accredited
               </span>
             </div>
             <div className="flex items-center space-x-3 pt-2">
               {social.facebook && (
-                <a href={social.facebook} target="_blank" rel="noreferrer" className="w-8 h-8 rounded-lg bg-slate-800 hover:bg-amber-500 hover:text-slate-950 flex items-center justify-center text-slate-300 transition-colors">
+                <a href={social.facebook} target="_blank" rel="noreferrer" className="w-8 h-8 rounded-lg bg-white/5 hover:bg-[var(--color-accent)] hover:text-[var(--color-primary)] flex items-center justify-center text-white transition-colors">
                   <Facebook className="w-4 h-4" />
                 </a>
               )}
               {social.twitter && (
-                <a href={social.twitter} target="_blank" rel="noreferrer" className="w-8 h-8 rounded-lg bg-slate-800 hover:bg-amber-500 hover:text-slate-950 flex items-center justify-center text-slate-300 transition-colors">
+                <a href={social.twitter} target="_blank" rel="noreferrer" className="w-8 h-8 rounded-lg bg-white/5 hover:bg-[var(--color-accent)] hover:text-[var(--color-primary)] flex items-center justify-center text-white transition-colors">
                   <Twitter className="w-4 h-4" />
                 </a>
               )}
               {social.linkedin && (
-                <a href={social.linkedin} target="_blank" rel="noreferrer" className="w-8 h-8 rounded-lg bg-slate-800 hover:bg-amber-500 hover:text-slate-950 flex items-center justify-center text-slate-300 transition-colors">
+                <a href={social.linkedin} target="_blank" rel="noreferrer" className="w-8 h-8 rounded-lg bg-white/5 hover:bg-[var(--color-accent)] hover:text-[var(--color-primary)] flex items-center justify-center text-white transition-colors">
                   <Linkedin className="w-4 h-4" />
                 </a>
               )}
               {social.youtube && (
-                <a href={social.youtube} target="_blank" rel="noreferrer" className="w-8 h-8 rounded-lg bg-slate-800 hover:bg-amber-500 hover:text-slate-950 flex items-center justify-center text-slate-300 transition-colors">
+                <a href={social.youtube} target="_blank" rel="noreferrer" className="w-8 h-8 rounded-lg bg-white/5 hover:bg-[var(--color-accent)] hover:text-[var(--color-primary)] flex items-center justify-center text-white transition-colors">
                   <Youtube className="w-4 h-4" />
                 </a>
               )}
               {social.instagram && (
-                <a href={social.instagram} target="_blank" rel="noreferrer" className="w-8 h-8 rounded-lg bg-slate-800 hover:bg-amber-500 hover:text-slate-950 flex items-center justify-center text-slate-300 transition-colors">
+                <a href={social.instagram} target="_blank" rel="noreferrer" className="w-8 h-8 rounded-lg bg-white/5 hover:bg-[var(--color-accent)] hover:text-[var(--color-primary)] flex items-center justify-center text-white transition-colors">
                   <Instagram className="w-4 h-4" />
                 </a>
               )}

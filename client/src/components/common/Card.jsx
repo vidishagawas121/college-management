@@ -10,8 +10,8 @@ const Card = ({
   return (
     <div
       onClick={onClick}
-      className={`bg-white rounded-xl border border-slate-200/80 shadow-sm overflow-hidden ${
-        hoverEffect ? 'hover:shadow-md hover:border-slate-300 transition-all duration-200 cursor-pointer' : ''
+      className={`bg-white rounded-[18px] border border-[var(--color-border)] shadow-soft overflow-hidden ${
+        hoverEffect ? 'hover:shadow-premium hover:border-[var(--color-accent-light)] transition-all duration-300 cursor-pointer' : ''
       } ${className}`}
       {...props}
     >
