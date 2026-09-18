@@ -6,7 +6,7 @@ import NoticeTicker from './NoticeTicker';
 
 const PublicLayout = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-800">
+    <div className="min-h-screen flex flex-col bg-[var(--color-background)] text-[var(--color-text)]">
       <NoticeTicker />
       <PublicHeader />
       <main className="flex-1">

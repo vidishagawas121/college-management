@@ -13,16 +13,16 @@ const Button = ({
   icon: Icon,
   ...props
 }) => {
-  const baseStyles = 'inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer';
+  const baseStyles = 'inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer';
 
   const variants = {
-    primary: 'bg-primary-900 hover:bg-primary-800 text-white focus:ring-primary-700 shadow-sm',
-    academic: 'bg-amber-600 hover:bg-amber-700 text-white focus:ring-amber-500 shadow-sm',
-    secondary: 'bg-slate-100 hover:bg-slate-200 text-slate-800 focus:ring-slate-300 border border-slate-200',
-    outline: 'bg-transparent hover:bg-primary-50 text-primary-900 border border-primary-800 focus:ring-primary-600',
+    primary: 'bg-[var(--color-secondary)] hover:bg-[var(--color-primary)] text-white focus:ring-[var(--color-accent-light)] shadow-md',
+    academic: 'bg-[var(--color-accent)] hover:bg-[var(--color-primary)] text-white focus:ring-[var(--color-accent-light)] shadow-md',
+    secondary: 'bg-white hover:bg-[var(--color-surface-soft)] text-[var(--color-primary)] focus:ring-[var(--color-accent-light)] border border-[var(--color-border)]',
+    outline: 'bg-transparent hover:bg-[var(--color-surface-soft)] text-[var(--color-primary)] border border-[var(--color-primary)] focus:ring-[var(--color-accent-light)]',
     danger: 'bg-rose-600 hover:bg-rose-700 text-white focus:ring-rose-500 shadow-sm',
-    ghost: 'bg-transparent hover:bg-slate-100 text-slate-700 focus:ring-slate-300',
-    gold: 'bg-amber-500 hover:bg-amber-600 text-slate-950 font-semibold focus:ring-amber-400 shadow',
+    ghost: 'bg-transparent hover:bg-[var(--color-surface-soft)] text-[var(--color-text)] focus:ring-[var(--color-border)]',
+    gold: 'bg-[var(--color-accent)] hover:bg-[#bf8d2e] text-[var(--color-primary)] font-semibold focus:ring-[var(--color-accent-light)] shadow',
   };
 
   const sizes = {

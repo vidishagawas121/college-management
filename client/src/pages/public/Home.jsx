@@ -83,55 +83,64 @@ const Home = () => {
     <div className="space-y-16 sm:space-y-24 pb-20">
       <SEO />
 
-      {/* 1. HERO SECTION */}
-      <section className="relative bg-academic-navy text-white overflow-hidden">
-        {/* Background Overlay & Decorative Elements */}
-        <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#d97706_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-primary-700/30 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-amber-500/15 rounded-full blur-3xl pointer-events-none" />
+      {/* 1. UNIFIED HERO SECTION */}
+      <section className="hero-unified relative isolate overflow-hidden bg-[#551524] text-white">
+        <div className="hero-dots absolute inset-0 pointer-events-none" />
+        <div className="hero-glow absolute -right-32 top-1/2 h-[34rem] w-[34rem] -translate-y-1/2 rounded-full bg-[#d8a52a]/10 blur-3xl pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-32 relative z-10">
-          <div className="max-w-3xl space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-amber-400 text-xs font-semibold backdrop-blur-md">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Admissions Open for Academic Session 2026-2027</span>
+        <div className="relative z-10 mx-auto grid max-w-[1500px] items-center gap-8 px-5 py-14 sm:px-8 sm:py-20 lg:min-h-[calc(100vh-116px)] lg:grid-cols-[49%_51%] lg:gap-0 lg:px-12 lg:py-16">
+          <div className="hero-rise relative z-20 max-w-2xl lg:pr-10">
+            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#d8a52a]/40 bg-white/10 px-3.5 py-2 text-xs font-semibold text-[#ffd36a] backdrop-blur-sm">
+              <Sparkles className="h-4 w-4" />
+              <span>Admissions Open for Academic Session 2026–2027</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black font-heading tracking-tight leading-[1.15] text-white">
-              {heroHeading}
+            <h1 className="max-w-3xl text-[clamp(3rem,5vw,5.5rem)] font-black leading-[.98] tracking-[-.035em] text-[#fff8ee]">
+              Empowering Minds,<br />
+              <span className="text-[#f5a000]">Transforming Futures</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal max-w-2xl">
-              {heroSubheading}
+            <p className="mt-7 max-w-xl text-base leading-7 text-[#e8dde0] sm:text-lg">
+              Discover world-class academic programs, cutting-edge research facilities, and vibrant campus life.
             </p>
 
-            <div className="pt-4 flex flex-wrap items-center gap-4">
-              <Link
-                to={heroPrimaryCtaLink}
-                className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-7 py-3.5 rounded-xl text-sm shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5"
-              >
-                <span>{heroPrimaryCtaText}</span>
-                <ArrowRight className="w-4 h-4" />
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <Link to={heroPrimaryCtaLink} className="hero-cta inline-flex items-center gap-3 rounded-xl bg-[#f5a000] px-6 py-3.5 text-sm font-bold text-[#35101b] shadow-lg shadow-black/20 focus:outline-none focus:ring-2 focus:ring-[#ffd36a] focus:ring-offset-2 focus:ring-offset-[#551524]">
+                <span>Explore Programs</span><ArrowRight className="h-4 w-4" />
               </Link>
-              <Link
-                to={heroSecondaryCtaLink}
-                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 text-white border border-white/20 font-semibold px-7 py-3.5 rounded-xl text-sm transition-all"
-              >
-                <span>{heroSecondaryCtaText}</span>
+              <Link to={heroSecondaryCtaLink} className="hero-cta inline-flex items-center gap-2 rounded-xl border border-white/25 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#ffd36a] focus:ring-offset-2 focus:ring-offset-[#551524]">
+                <span>Admissions 2026</span>
               </Link>
             </div>
 
-            {/* Quick Accreditations */}
-            <div className="pt-8 border-t border-white/10 flex flex-wrap items-center gap-6 text-xs text-slate-400">
-              <span className="flex items-center gap-1.5 text-slate-300 font-medium">
-                <ShieldCheck className="w-4 h-4 text-amber-400" /> NAAC A++ (CGPA 3.82)
-              </span>
-              <span className="flex items-center gap-1.5 text-slate-300 font-medium">
-                <CheckCircle2 className="w-4 h-4 text-amber-400" /> NBA Tier-1 Accredited
-              </span>
-              <span className="flex items-center gap-1.5 text-slate-300 font-medium">
-                <Globe2 className="w-4 h-4 text-amber-400" /> AICTE & UGC Recognized
-              </span>
+            <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 border-t border-white/15 pt-6 text-xs font-medium text-[#e8dde0]">
+              <span className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-[#f5a000]" /> NAAC A++ (CGPA 3.82)</span>
+              <span className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-[#f5a000]" /> NBA Tier-1 Accredited</span>
+              <span className="flex items-center gap-2"><Globe2 className="h-4 w-4 text-[#f5a000]" /> AICTE &amp; UGC Recognized</span>
+            </div>
+          </div>
+
+          <div className="hero-image-wrap hero-slide relative mx-auto min-h-[390px] w-full max-w-2xl sm:min-h-[500px] lg:min-h-[590px] lg:max-w-none">
+            <div className="hero-arc hero-arc-gold" />
+            <div className="hero-arc hero-arc-maroon" />
+            <div className="hero-image-shell absolute inset-5 overflow-hidden rounded-[42%_8%_8%_42%] border border-white/15 shadow-2xl shadow-black/30 sm:inset-7 lg:inset-y-5 lg:left-6 lg:right-0">
+              <ImageWithFallback
+                type="article"
+                alt="Students walking together on a university campus"
+                className="h-full w-full object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#551524]/25 via-transparent to-[#551524]/10" />
+            </div>
+
+            <div className="hero-float absolute left-3 top-6 z-10 flex items-center gap-3 rounded-2xl bg-white/95 px-4 py-3 text-[#551524] shadow-xl sm:left-5 sm:top-10 sm:px-5 sm:py-4">
+              <ShieldCheck className="h-11 w-11 rounded-full bg-[#fff3d5] p-2 text-[#c38c16]" />
+              <div><strong className="block text-base leading-tight sm:text-lg">NAAC A+</strong><span className="text-[11px] text-[#4b3a40] sm:text-xs">Accredited<br />Excellence in Education</span></div>
+            </div>
+
+            <div className="hero-float absolute bottom-5 left-3 z-10 flex items-center gap-3 rounded-2xl bg-white/95 px-4 py-3 text-[#551524] shadow-xl sm:bottom-10 sm:left-10 sm:gap-4 sm:px-5 sm:py-4">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#741c32] text-xl text-white">↗</span>
+              <div><strong className="block text-base leading-tight sm:text-lg">Admissions Open</strong><span className="text-[11px] text-[#4b3a40] sm:text-xs">for Academic Session 2026–27</span></div>
+              <ArrowRight className="h-7 w-7 shrink-0 rounded-full bg-[#fbe5e1] p-2 text-[#741c32]" />
             </div>
           </div>
         </div>
