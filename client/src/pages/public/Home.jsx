@@ -125,6 +125,7 @@ const Home = () => {
             <div className="hero-arc hero-arc-maroon" />
             <div className="hero-image-shell absolute inset-5 overflow-hidden rounded-[42%_8%_8%_42%] border border-white/15 shadow-2xl shadow-black/30 sm:inset-7 lg:inset-y-5 lg:left-6 lg:right-0">
               <ImageWithFallback
+                src="/assets/herobgimg.png"
                 type="article"
                 alt="Students walking together on a university campus"
                 className="h-full w-full object-cover object-center"
