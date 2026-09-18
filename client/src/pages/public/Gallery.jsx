@@ -4,6 +4,7 @@ import { galleryService } from '../../services/galleryService';
 import SEO from '../../components/common/SEO';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
 import EmptyState from '../../components/common/EmptyState';
+import ImageWithFallback from '../../components/common/ImageWithFallback';
 import { Image as ImageIcon, Camera, ArrowRight } from 'lucide-react';
 
 const Gallery = () => {
@@ -88,9 +89,10 @@ const Gallery = () => {
               >
                 <div>
                   <div className="h-60 bg-slate-100 overflow-hidden relative">
-                    <img
-                      src={gal.coverImage || 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=800'}
+                    <ImageWithFallback
+                      src={gal.coverImage}
                       alt={gal.title}
+                      type="gallery"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-4 left-4 bg-academic-navy/90 backdrop-blur-xs text-amber-400 text-xs font-bold px-3 py-1 rounded-xl shadow flex items-center gap-1.5">

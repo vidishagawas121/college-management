@@ -9,6 +9,7 @@ import SearchBar from '../../components/common/SearchBar';
 import StatusBadge from '../../components/common/StatusBadge';
 import ConfirmDialog from '../../components/admin/ConfirmDialog';
 import FileUploader from '../../components/admin/FileUploader';
+import ImageWithFallback from '../../components/common/ImageWithFallback';
 import { Plus, Edit, Trash2, Users } from 'lucide-react';
 
 const StaffAdmin = () => {
@@ -187,9 +188,10 @@ const StaffAdmin = () => {
       cell: (row) => (
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl overflow-hidden bg-slate-100 flex-shrink-0 border border-slate-200">
-            <img
-              src={row.photo || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200'}
+            <ImageWithFallback
+              src={row.photo}
               alt={row.name}
+              type="avatar"
               className="w-full h-full object-cover"
             />
           </div>

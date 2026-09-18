@@ -68,7 +68,7 @@ const FileUploader = ({
                 src={previewUrl}
                 alt="Uploaded media"
                 className="w-full h-full object-cover"
-                onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1562774053-701939374585?w=200'; }}
+                onError={(e) => { e.target.src = '/assets/campus-placeholder.svg'; }}
               />
             </div>
           )}

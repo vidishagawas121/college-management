@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e3a8a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bgGrad)" />
+  <!-- Academic Building Silhouette -->
+  <rect x="100" y="220" width="600" height="230" rx="6" fill="#1e293b" />
+  <polygon points="400,100 280,220 520,220" fill="url(#accent)" />
+  <!-- Dome / Pillar Columns -->
+  <rect x="160" y="260" width="40" height="190" rx="4" fill="#334155" />
+  <rect x="240" y="260" width="40" height="190" rx="4" fill="#334155" />
+  <rect x="320" y="260" width="40" height="190" rx="4" fill="#334155" />
+  <rect x="440" y="260" width="40" height="190" rx="4" fill="#334155" />
+  <rect x="520" y="260" width="40" height="190" rx="4" fill="#334155" />
+  <rect x="600" y="260" width="40" height="190" rx="4" fill="#334155" />
+  <!-- Text -->
+  <text x="400" y="475" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="20" font-weight="600" text-anchor="middle">APEX INSTITUTE OF TECHNOLOGY &amp; SCIENCES</text>
+</svg>

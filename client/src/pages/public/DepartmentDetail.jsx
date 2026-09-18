@@ -4,6 +4,7 @@ import { departmentService } from '../../services/departmentService';
 import SEO from '../../components/common/SEO';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
 import EmptyState from '../../components/common/EmptyState';
+import ImageWithFallback from '../../components/common/ImageWithFallback';
 import { Mail, Phone, Users, BookOpen, Award, Sparkles, Building, ChevronLeft } from 'lucide-react';
 
 const DepartmentDetail = () => {
@@ -80,9 +81,10 @@ const DepartmentDetail = () => {
         {department.headOfDepartment && (
           <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xs flex flex-col md:flex-row items-center md:items-start gap-6">
             <div className="w-28 h-28 rounded-2xl overflow-hidden bg-slate-100 flex-shrink-0 border-2 border-amber-500/40">
-              <img
-                src={department.headPhoto || 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400'}
+              <ImageWithFallback
+                src={department.headPhoto}
                 alt={department.headOfDepartment}
+                type="avatar"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -177,9 +179,10 @@ const DepartmentDetail = () => {
                   className="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs hover:shadow-md transition-all flex items-center gap-4 group"
                 >
                   <div className="w-16 h-16 rounded-xl overflow-hidden bg-slate-100 flex-shrink-0 border border-slate-200">
-                    <img
-                      src={f.photo || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400'}
+                    <ImageWithFallback
+                      src={f.photo}
                       alt={f.name}
+                      type="avatar"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform"
                     />
                   </div>

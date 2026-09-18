@@ -4,6 +4,7 @@ import { staffService } from '../../services/staffService';
 import SEO from '../../components/common/SEO';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
 import EmptyState from '../../components/common/EmptyState';
+import ImageWithFallback from '../../components/common/ImageWithFallback';
 import { Mail, Phone, BookOpen, GraduationCap, Building, ChevronLeft, Award, Sparkles } from 'lucide-react';
 
 const StaffDetail = () => {
@@ -49,9 +50,10 @@ const StaffDetail = () => {
           {/* Left Profile Overview */}
           <div className="lg:col-span-4 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm text-center space-y-4">
             <div className="w-40 h-40 mx-auto rounded-3xl overflow-hidden bg-slate-100 border-4 border-amber-500/20 shadow-md">
-              <img
-                src={staff.photo || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600'}
+              <ImageWithFallback
+                src={staff.photo}
                 alt={staff.name}
+                type="avatar"
                 className="w-full h-full object-cover"
               />
             </div>

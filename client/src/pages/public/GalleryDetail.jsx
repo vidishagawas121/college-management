@@ -4,6 +4,7 @@ import { galleryService } from '../../services/galleryService';
 import SEO from '../../components/common/SEO';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
 import EmptyState from '../../components/common/EmptyState';
+import ImageWithFallback from '../../components/common/ImageWithFallback';
 import { Camera, ChevronLeft, ChevronRight, X, ZoomIn } from 'lucide-react';
 
 const GalleryDetail = () => {
@@ -94,9 +95,10 @@ const GalleryDetail = () => {
                 onClick={() => setLightboxIndex(idx)}
                 className="group relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-100 cursor-pointer shadow-xs hover:shadow-xl transition-all"
               >
-                <img
+                <ImageWithFallback
                   src={img.url}
                   alt={img.caption || `Photo ${idx + 1}`}
+                  type="gallery"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
@@ -135,9 +137,10 @@ const GalleryDetail = () => {
 
           {/* Main Image */}
           <div className="max-w-5xl max-h-[80vh] flex flex-col items-center justify-center">
-            <img
+            <ImageWithFallback
               src={images[lightboxIndex]?.url}
               alt={images[lightboxIndex]?.caption || 'Full view'}
+              type="gallery"
               className="max-h-[75vh] max-w-full object-contain rounded-xl shadow-2xl"
             />
             {images[lightboxIndex]?.caption && (

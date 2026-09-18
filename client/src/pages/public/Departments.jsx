@@ -4,6 +4,7 @@ import { departmentService } from '../../services/departmentService';
 import SEO from '../../components/common/SEO';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
 import EmptyState from '../../components/common/EmptyState';
+import ImageWithFallback from '../../components/common/ImageWithFallback';
 import { GraduationCap, ArrowRight, Users, BookOpen, ChevronRight } from 'lucide-react';
 
 const Departments = () => {
@@ -61,9 +62,10 @@ const Departments = () => {
               >
                 <div>
                   <div className="h-56 bg-slate-100 overflow-hidden relative">
-                    <img
-                      src={dept.image || 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800'}
+                    <ImageWithFallback
+                      src={dept.image}
                       alt={dept.name}
+                      type="department"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-6">

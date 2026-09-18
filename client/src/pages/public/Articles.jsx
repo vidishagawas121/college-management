@@ -4,6 +4,7 @@ import { articleService } from '../../services/articleService';
 import SEO from '../../components/common/SEO';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
 import EmptyState from '../../components/common/EmptyState';
+import ImageWithFallback from '../../components/common/ImageWithFallback';
 import SearchBar from '../../components/common/SearchBar';
 import Pagination from '../../components/common/Pagination';
 import { Newspaper, Calendar, Clock, User, ArrowRight, Tag } from 'lucide-react';
@@ -110,11 +111,12 @@ const Articles = () => {
               >
                 <div>
                   <div className="h-52 bg-slate-100 overflow-hidden relative">
-                    <img
-                      src={art.featuredImage || 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800'}
-                      alt={art.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
+                      <ImageWithFallback
+                        src={art.featuredImage}
+                        alt={art.title}
+                        type="article"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
                     <div className="absolute top-4 left-4 bg-academic-navy text-amber-400 text-xs font-bold px-3 py-1 rounded-xl shadow">
                       {art.category}
                     </div>
