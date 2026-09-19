@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Bell, ChevronRight } from 'lucide-react';
+import { Megaphone, ArrowRight } from 'lucide-react';
 import { noticeService } from '../../services/noticeService';
 
 const NoticeTicker = () => {
@@ -20,42 +20,37 @@ const NoticeTicker = () => {
     fetchUrgentNotices();
   }, []);
 
-  if (urgentNotices.length === 0) return null;
+  const defaultAnnouncements = [
+    { title: 'Admissions Open for Academic Session 2026–27' },
+    { title: 'End-Semester Theory Examinations Schedule Released' },
+    { title: 'Hostel Re-allotment and Room Upgradation' },
+    { title: 'National Merit-cum-Means Scholarship' },
+  ];
+
+  const announcements = urgentNotices.length > 0 ? urgentNotices : defaultAnnouncements;
 
   return (
-    <div className="bg-[var(--color-primary-dark)] text-white text-xs border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between gap-4">
-        <div className="flex items-center gap-2 flex-shrink-0">
-          <span className="inline-flex items-center gap-1.5 bg-[var(--color-accent)] text-[var(--color-primary-dark)] font-bold px-2.5 py-0.5 rounded-md uppercase tracking-wider text-[10px]">
-            <Bell className="w-3 h-3 fill-current" />
-            Alerts
-          </span>
+    <div className="public-alert-bar">
+      <div className="public-header__container public-alert-bar__inner">
+        <div className="public-alert-bar__label">
+          <Megaphone aria-hidden="true" className="w-3.5 h-3.5" />
+          <strong>ALERTS</strong>
         </div>
-
-        {/* Ticker marquee or active list */}
-        <div className="flex-1 overflow-hidden">
-          <div className="flex items-center gap-8 truncate">
-            {urgentNotices.map((notice, idx) => (
-              <Link
-                key={notice._id || idx}
-                to={`/notices/${notice.slug}`}
-                className="hover:text-[var(--color-accent-light)] flex items-center gap-1.5 transition-colors group truncate"
-              >
-                <span className="w-1 h-1 rounded-full bg-[var(--color-accent)] flex-shrink-0" />
-                <span className="truncate font-medium">{notice.title}</span>
-                {notice.priority === 'URGENT' && (
-                  <span className="text-[10px] text-rose-300 font-bold px-1 bg-rose-900/50 rounded">URGENT</span>
-                )}
+        <div className="public-alert-bar__notices">
+          {announcements.map((notice, idx) => (
+            <React.Fragment key={notice._id || idx}>
+              <Link to={notice.slug ? `/notices/${notice.slug}` : '/notices'} className="public-alert-bar__notice">
+                {notice.title}
               </Link>
-            ))}
-          </div>
+              {idx < announcements.length - 1 && (
+                <span className="text-white/40 select-none px-1" aria-hidden="true">|</span>
+              )}
+            </React.Fragment>
+          ))}
         </div>
-
-        <Link
-          to="/notices"
-          className="flex-shrink-0 text-[var(--color-accent)] hover:text-white font-semibold flex items-center gap-1 text-[11px] hidden sm:flex"
-        >
-          View All Notices <ChevronRight className="w-3 h-3" />
+        <Link to="/notices" className="public-alert-bar__all">
+          <span>View All Notices</span>
+          <ArrowRight aria-hidden="true" className="w-3.5 h-3.5" />
         </Link>
       </div>
     </div>
